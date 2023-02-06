@@ -51,6 +51,21 @@ def find_sum_pair(numbers:list, k:int)->list:
     so the sum of the items is equal to k.
     else output a list with two integer zeros
     """
-    pass
+    result = []
+    result_final = []
+    test = 0
+    for index, item in enumerate(numbers):
+        for number in numbers:
+            if numbers[test] + number == k:
+                pair = test, numbers.index(number)
+                result.append(pair)
+        test = index
 
-find_sum_pair([1, 5, 1, 8, 2], 13)
+    for i in result:
+        if sorted(i) not in result_final:
+            result_final.append(sorted(i))
+    if len(result_final) == 0:
+        return list([0, 0])
+    return result_final
+
+print(find_sum_pair([1, 8, 5, 10, 1, 3, 1], 13))
