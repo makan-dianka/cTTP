@@ -30,6 +30,10 @@ def is_bool(a:int, b:int)->bool:
     """
     return a == 1 or b == 1 or a + b == 1
 
+def is_twin(x:str, y:str)->bool:
+    """output if x and y have the same letter"""
+    return sorted(x) == sorted(y)
+
 def average(table:list)->int:
     "output 0 if param is empty otherwise output mean of param"
     return sum(table) / len(table) if len(table) != 0 else 0
