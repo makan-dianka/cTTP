@@ -34,6 +34,16 @@ def average(table:list)->int:
     "output 0 if param is empty otherwise output mean of param"
     return sum(table) / len(table) if len(table) != 0 else 0
 
+def sort_list(array:list)->list:
+    """
+    Algorithm to sort a list
+    """
+    for i in range(len(array)):
+        for j in range(0, len(array) - i -1):
+            if array[j] > array[j + 1]:
+                array[j], array[j +1] = array[j + 1], array[j]
+    return array
+
 def find_sum_pair(numbers:list, k:int)->list:
     """
     output a list of two integers 
